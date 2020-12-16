@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue JS</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.4/vue.min.js">
+		
+	</script>
+</head>
+<body>
+	
+	<div id="app">
+		<input v-model="message"><br/>
+		{{ message }}
+
+		<ul>
+			<li v-for="f in food_items">{{f}}</li>
+		</ul>
+		<button v-on:click="buttonClick">Click, please</button>
+	</div>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				'message' : 'Hello World',
+				'food_items' : ['chicken', 'fries', 'fruit', 'veggies']
+			},
+			methods: {
+				buttonClick: function(){
+					alert('Somebody clicked the button!');
+				}
+			}
+			});		
+	</script>
+</body>
+</html>
